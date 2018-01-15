@@ -74,6 +74,14 @@ Modal.setAppElement(appElement);
 Modal.setAppElement('#your-app-element');
 ```
 
+- componentWillMount (the recommended appElement is `body`)  
+
+```js
+componentWillMount() {
+    Modal.setAppElement('body');
+}
+```
+
 ### Additional Aria Attributes
 
 Use the property `aria` to pass any additional aria attributes. It accepts
@@ -230,6 +238,10 @@ class App extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+  }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
   }
 
   openModal() {
